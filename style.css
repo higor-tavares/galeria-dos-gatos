@@ -25,12 +25,37 @@ section, main{
     padding: 16px;
     margin: auto;
 }
+
 #header{
     background-color: var(--primary);
     color: var(--white);
     display: flex;
-    padding: 2%
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding: 16px;
+    margin:0;
 }
+.navbar ul{
+    display: none;
+    position:fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--primary);
+    width: 70%;
+    z-index: 2;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 5px 5px var(--background-dark);
+    height: 100%;
+    padding: 0;
+}
+.icon{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
 #galery ul {
     margin: 24px 0;
     display: grid;
@@ -46,8 +71,20 @@ section, main{
     display: inline;
     line-height: 32px;
 }
+.title h1{
+    visibility: hidden;
+}
+
+.visible ul {
+    display: block !important;
+}
 li {
     list-style: none;
+    width: 100%;
+    padding: 24px 0;
+}
+.navbar ul li:hover{
+    background-color: var(--primary-dark);
 }
 figure{
     width: 100%;
@@ -67,5 +104,26 @@ figure img {
 @media only screen and (min-width: 900px){
     #galery ul{
         grid-template-columns: repeat(3, auto);
+    }
+    .icon{
+        display: none;
+    }
+    .navbar{
+        flex-basis: 30%;
+    }
+    .navbar ul{
+        display: flex;
+        justify-content: space-around;    
+        position: inherit;
+        box-shadow: none;
+        height: fit-content;   
+        padding: 0;    
+    }
+    li {
+        padding: 16px;
+        height: 100%;
+    }
+    .title   h1 {
+        visibility: visible;
     }
 }

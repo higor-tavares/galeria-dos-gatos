@@ -7,14 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria dos Gatos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/paw.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <div class="cover"></div>
     <header id="header">
-       <div class="title">
-        <img src="assets/paw.png" alt="">
-        <h1>Galeria dos Gatos</h1>
-       </div>
+        <div class="title">
+            <img src="assets/paw.png" alt="">
+            <h1>Galeria dos Gatos</h1>
+        </div>
+        <nav id="menu" class="navbar">
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+                <li>Blog</li>
+            </ul>
+            <span class="icon" onclick="changeMenu()">
+                <i class="fa fa-bars"></i>
+            </span>
+        </nav>
     </header>
     <main>
         <h2>O Melhor amigo do Homem</h2>
@@ -68,6 +82,19 @@
             </ul>
         </section>
     </main>
+    <script>
+        function changeMenu() {
+            let menu = document.getElementById("menu");
+            if (menu.className === "navbar") {
+                menu.className += " visible";
+                console.log("tava hidden")
+            } else {
+                menu.className = "navbar";
+                console.log("agora ta file")
+            }
+
+        }
+    </script>
 </body>
 
 </html>
